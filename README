@@ -1,0 +1,59 @@
+Nume: Croitoru Nicolae-Valentin
+Grupa: 334CC
+
+Tema 1 - Marketplace
+
+Organizare:
+    Am inceput implementarea fisierele sursa din schelet.
+    Pentru Marketplace am folosit un Lock, deoarece am considerat ca este mai 
+    usor de utilizat. De asemenea am mai folosit niste liste pentru
+    producatori si consumatori si un tuplu (producer_id, product) pentru un 
+    produs.
+
+    Producer:
+    - am initializat variabilele necesare in constructor
+    - run:
+        - se inregistreaza producatorul;
+        - producatorul va incerca sa publice produsele la nesfarsit;
+        - produsele vor fii publicate unul cate unul pana cand cantitatea este 
+        atinsa.
+
+    Consumer:
+    - am initializat variabilele necesare in constructor
+    - run:
+        - se creeaza cartul;
+        - se va parcurge fiecare cart si se vor executa operatiile de add / 
+        remove
+        - se afiseaza lista produselor din cart
+
+    Marketplace:
+    - am initializat variabilele necesare in constructor (am initializat id-ul 
+    unui producator, id-ul unui cart, o lista pentru producatori, o lista 
+    pentru consumatori si un Lock);
+    - register_producer: adaug un producator in lista de producatori, 
+    incrementez id-ul si il returnez;
+    - publish: daca in lista producatorului se mai pot pune produse, adaugam 
+    produsul in lista;
+    - new cart: adaug un consumator in lista de consumatori, incrementez id-ul 
+    si il returnez;
+    - add_to_cart: caut produsul si dupa ce il gasesc il adaug in cartul dat 
+    si il sterg din lista de producatori;
+    - remove_from_cart: caut produsul si dupa ce il gasesc il sterg din cart 
+    il adaug inpoi la lista de producatori;
+    - place_order: returnez lista cu toate produsele de la cartul specificat
+
+    Tema a fost utila, consider ca a acoperit bine partea de multithreading in 
+    python.
+
+    Consider ca am avut o implementaree naiva, intr-adevar, cel mai probabil 
+    se putea face mai bine din punct de vedere al eficientei.
+
+Implementare:
+    Am implementat tot ce mi s-a cerut.
+    Dificultati: m-am chinuit initial sa inteleg scheletul, dar a fost okey.
+
+Resurse utilizate:
+    https://ocw.cs.pub.ro/courses/asc/laboratoare/02
+    https://docs.python.org/3/library/threading.html
+
+Git:
